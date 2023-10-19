@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpgx870v334yd"]
+
+[ext_resource type="Script" path="res://src/scenes/player/player.gd" id="1_33fnc"]
+[ext_resource type="Texture2D" uid="uid://dqpbn65cu8ptb" path="res://src/sprites/heroes/knight/idle/idle_anim_f1.png" id="2_spvx3"]
+[ext_resource type="Texture2D" uid="uid://crd4rtbysva0" path="res://src/sprites/heroes/knight/idle/idle_anim_f2.png" id="3_xf3a6"]
+[ext_resource type="Texture2D" uid="uid://hac632u7bly5" path="res://src/sprites/heroes/knight/idle/idle_anim_f3.png" id="4_0ttqt"]
+[ext_resource type="Texture2D" uid="uid://b5i6n552ix80t" path="res://src/sprites/heroes/knight/idle/idle_anim_f4.png" id="5_ukwaq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwatg"]
+size = Vector2(12, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2pj31"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_spvx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xf3a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0ttqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ukwaq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="player" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_33fnc")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(1, 4)
+shape = SubResource("RectangleShape2D_qwatg")
+
+[node name="animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2pj31")
+animation = &"idle"
