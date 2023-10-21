@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpgx870v334yd"]
+[gd_scene load_steps=13 format=3 uid="uid://cpgx870v334yd"]
 
 [ext_resource type="Script" path="res://src/scenes/player/player.gd" id="1_33fnc"]
 [ext_resource type="Texture2D" uid="uid://dqpbn65cu8ptb" path="res://src/sprites/heroes/knight/idle/idle_anim_f1.png" id="2_spvx3"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bpvbks5cx54am" path="res://src/sprites/heroes/knight/run/run_anim_f2.png" id="7_2vtqt"]
 [ext_resource type="Texture2D" uid="uid://bufxees2n21" path="res://src/sprites/heroes/knight/run/run_anim_f3.png" id="8_1wa64"]
 [ext_resource type="Texture2D" uid="uid://bu7mv3yr7p1sq" path="res://src/sprites/heroes/knight/run/run_anim_f4.png" id="9_tw1n6"]
+[ext_resource type="PackedScene" uid="uid://kw2jrdrn7d7y" path="res://src/scenes/weapon/weapon.tscn" id="10_wohmb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwatg"]
 size = Vector2(12, 20)
@@ -61,3 +62,7 @@ shape = SubResource("RectangleShape2D_qwatg")
 [node name="animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2pj31")
 animation = &"idle"
+
+[node name="weapon" parent="." instance=ExtResource("10_wohmb")]
+position = Vector2(22.3333, 3.66667)
+rotation = 1.5708
