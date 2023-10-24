@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 	self.animate()
 	self.verify_direction()
 	
-	self.weapon.swing(self)
+	#self.weapon.swing(self)
 	self.weapon.rotate_sword(self)
 	
 func move() -> void:
