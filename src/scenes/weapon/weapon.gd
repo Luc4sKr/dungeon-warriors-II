@@ -13,3 +13,8 @@ var offset_rotated = Vector2(0, -25)
 
 func _process(delta: float) -> void:
 	pass
+
+func _on_body_entered(body):
+	if body.is_in_group("enemy"):
+		body.life -= 1
+		print(body.get_name())
