@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://csephedbfopmk"]
+[gd_scene load_steps=6 format=3 uid="uid://csephedbfopmk"]
 
 [ext_resource type="Texture2D" uid="uid://roa8c75tjk7q" path="res://src/sprites/tilesets/floors/floor.png" id="1_8lckb"]
 [ext_resource type="PackedScene" uid="uid://cpgx870v334yd" path="res://src/scenes/player/player.tscn" id="1_tl4va"]
+[ext_resource type="PackedScene" uid="uid://bdcbbck06jswn" path="res://src/scenes/enemy/enemy.tscn" id="3_khmvm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yc6hy"]
 texture = ExtResource("1_8lckb")
@@ -35,3 +36,5 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="player" parent="." instance=ExtResource("1_tl4va")]
 position = Vector2(452, 223)
+
+[node name="enemy" parent="." instance=ExtResource("3_khmvm")]
