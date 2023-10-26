@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cpgx870v334yd"]
+[gd_scene load_steps=14 format=3 uid="uid://cpgx870v334yd"]
 
 [ext_resource type="Script" path="res://src/scenes/player/player.gd" id="1_33fnc"]
 [ext_resource type="Texture2D" uid="uid://dqpbn65cu8ptb" path="res://src/sprites/heroes/knight/idle/idle_anim_f1.png" id="2_spvx3"]
+[ext_resource type="Script" path="res://src/scenes/player/camera.gd" id="2_uakd2"]
 [ext_resource type="Texture2D" uid="uid://crd4rtbysva0" path="res://src/sprites/heroes/knight/idle/idle_anim_f2.png" id="3_xf3a6"]
 [ext_resource type="Texture2D" uid="uid://hac632u7bly5" path="res://src/sprites/heroes/knight/idle/idle_anim_f3.png" id="4_0ttqt"]
 [ext_resource type="Texture2D" uid="uid://b5i6n552ix80t" path="res://src/sprites/heroes/knight/idle/idle_anim_f4.png" id="5_ukwaq"]
@@ -54,6 +55,10 @@ animations = [{
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(3, 3)
 script = ExtResource("1_33fnc")
+
+[node name="camera" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = ExtResource("2_uakd2")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(1, 4)
