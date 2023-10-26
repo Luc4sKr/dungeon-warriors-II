@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @onready var animation: AnimatedSprite2D = $"animation"
-@onready var weapon: Area2D = $"weapon"
+@onready var weapon_rotation: Node2D = $"weapon_rotation"
 
 var speed = 300
 
@@ -11,8 +11,7 @@ func _physics_process(delta: float) -> void:
 	self.animate()
 	self.verify_direction()
 	
-	#self.weapon.swing(self)
-	self.weapon.rotate_sword(self)
+	weapon_rotation.look_at(get_viewport().get_mouse_position())
 	
 func move() -> void:
 	var direction: Vector2 = Vector2(

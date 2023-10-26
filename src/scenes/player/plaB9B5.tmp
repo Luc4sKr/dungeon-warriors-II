@@ -63,9 +63,6 @@ shape = SubResource("RectangleShape2D_qwatg")
 sprite_frames = SubResource("SpriteFrames_2pj31")
 animation = &"idle"
 
-[node name="weapon_rotation" type="Node2D" parent="."]
-position = Vector2(0, 6.33333)
-
-[node name="weapon" parent="weapon_rotation" instance=ExtResource("10_wohmb")]
-position = Vector2(22.6667, -2)
-rotation = 1.5708
+[node name="weapon" parent="." instance=ExtResource("10_wohmb")]
+position = Vector2(7.66667, -7)
+rotation = -0.785398
