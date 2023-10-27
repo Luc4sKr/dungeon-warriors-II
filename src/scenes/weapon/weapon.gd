@@ -1,20 +1,24 @@
 extends Area2D
 
-
-@onready var sprite = $"sprite"
-
-var left_swing = 10
-var right_swing = -190
+var attack_offset = 0
+var attack_speed = 2
 var swing_side = 1
 
-var angle = 0
-var offset = Vector2(0, -50)
-var offset_rotated = Vector2(0, -25)
+var attacking = false
 
 func _process(delta: float) -> void:
-	pass
+	check_attack()
 
-func _on_body_entered(body):
+func check_attack() -> void:
+	if Input.is_action_pressed("attack") || attacking:
+		attacking = true
+		attack_offset += attack_speed * swing_side
+		
+		if (attack_offset >= 360 || attack_offset <= -360):
+			attacking = false
+			attack_offset = 0
+			swing_side *= -1
+
+func _on_body_entered(body) -> void:
 	if body.is_in_group("enemy"):
-		body.life -= 1
-		print(body.get_name())
+		pass
