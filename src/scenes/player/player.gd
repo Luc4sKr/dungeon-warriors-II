@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 	self.animate()
 	self.verify_direction()
 	
-	weapon_rotation.look_at(get_global_mouse_position())
+	self.manage_weapon_rotation()
 	
 func move() -> void:
 	var direction: Vector2 = Vector2(
@@ -33,3 +33,7 @@ func verify_direction() -> void:
 		self.animation.flip_h = false
 	if self.velocity.x < 0:
 		self.animation.flip_h = true
+
+func manage_weapon_rotation() -> void:
+	weapon_rotation.look_at(get_global_mouse_position())
+	weapon_rotation.rotation_degrees += weapon.attack_offset + 180
