@@ -32,7 +32,7 @@ animations = [{
 [node name="enemy" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(3, 3)
 collision_layer = 4
-collision_mask = 19
+collision_mask = 11
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_iw0qa")
@@ -51,7 +51,7 @@ frame_progress = 0.111379
 debug_enabled = true
 
 [node name="navigation_timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 autostart = true
 
 [connection signal="timeout" from="navigation_timer" to="." method="_on_navigation_timer_timeout"]
