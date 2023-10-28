@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://f2d6x1dc6q1w" path="res://src/sprites/enemies/small_demon/idle/idle_anim_f4.png" id="4_i7cq0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3r51"]
-size = Vector2(10, 16)
+size = Vector2(10, 13)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_08hyg"]
 animations = [{
@@ -31,10 +31,14 @@ animations = [{
 
 [node name="enemy" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(3, 3)
+collision_layer = 4
+collision_mask = 19
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_iw0qa")
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(0, 4.83333)
 shape = SubResource("RectangleShape2D_d3r51")
 
 [node name="animation" type="AnimatedSprite2D" parent="."]
@@ -42,3 +46,12 @@ sprite_frames = SubResource("SpriteFrames_08hyg")
 animation = &"idle"
 frame = 2
 frame_progress = 0.111379
+
+[node name="navigation_agent" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="navigation_timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="navigation_timer" to="." method="_on_navigation_timer_timeout"]
