@@ -52,7 +52,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(3, 3)
 collision_mask = 12
 script = ExtResource("1_33fnc")
@@ -67,7 +67,7 @@ shape = SubResource("RectangleShape2D_qwatg")
 
 [node name="animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2pj31")
-animation = &"idle"
+animation = &"run"
 
 [node name="weapon_rotation" type="Node2D" parent="."]
 position = Vector2(1, 5.33333)
