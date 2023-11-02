@@ -1,10 +1,13 @@
 extends Area2D
 
+@export var player: CharacterBody2D
+
 var attack_offset = 0
 var attack_speed = 2
 var swing_side = 1
 
 var attacking = false
+var damage_modifier = 5
 
 func _process(delta: float) -> void:
 	check_attack()
@@ -19,6 +22,11 @@ func check_attack() -> void:
 			attack_offset = 0
 			swing_side *= -1
 
+func take_damage(obj) -> void:
+	obj.life -= self.damage_modifier + self.player.damage
+
 func _on_body_entered(body) -> void:
+	print(body.name)
 	if body.is_in_group("enemy"):
-		pass
+		print("enemy")
+		self.take_damage(body)

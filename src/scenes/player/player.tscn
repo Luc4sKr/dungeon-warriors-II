@@ -72,6 +72,7 @@ animation = &"run"
 [node name="weapon_rotation" type="Node2D" parent="."]
 position = Vector2(1, 5.33333)
 
-[node name="weapon" parent="weapon_rotation" instance=ExtResource("10_wohmb")]
+[node name="weapon" parent="weapon_rotation" node_paths=PackedStringArray("player") instance=ExtResource("10_wohmb")]
 position = Vector2(21.3333, 0)
 rotation = 1.5708
+player = NodePath("../..")

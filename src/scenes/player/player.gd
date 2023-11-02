@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var weapon: Area2D = $"weapon_rotation/weapon"
 
 const speed = 300
+var damage = 20
 
 func _physics_process(delta: float) -> void:
 	self.move()
